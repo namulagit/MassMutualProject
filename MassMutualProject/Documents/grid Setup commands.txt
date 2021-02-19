@@ -1,0 +1,22 @@
+java -Dwebdriver.chrome.driver="C:\chromedriver.exe" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444/grid/register -browser "browserName=chrome,version=ANY,platform=WINDOWS,maxInstances=20" -maxSession 20
+
+
+
+
+
+Working Hub setup:
+
+java -jar selenium-server-standalone-3.141.59.jar -role hub
+
+
+--Not working -->java -jar selenium-server-standalone-3.141.59.jar -role webdriver -hub http://192.168.1.10:4444/grid/register -browser browserName="chrome",version=ANY,platform=WINDOWS,maxInstance=5 -Dwebdriver.chrome.driver="C:\chromedriver.exe"
+
+
+Working node setup:
+
+java -Dwebdriver.chrome.driver="C:\chromedriver.exe" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444/grid/register -browser "browserName=chrome,version=ANY,platform=WINDOWS,maxInstances=20" -maxSession 20
+
+java -Dwebdriver.chrome.driver="C:\chromedriver.exe" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://192.168.1.10:4444/grid/register -browser "browserName=chrome,version=ANY,platform=WINDOWS,maxInstances=20" -maxSession 40
+
+
+#Here localhost- Refers to Hub ip address 
